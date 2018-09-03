@@ -4,12 +4,12 @@ Demonstrates using (calling) FUNCTIONS and using (calling) METHODS:
   -- how they differ.
 
 Authors: David Mutchler, Dave Fisher, Vibha Alangar, Amanda Stouder,
-         their colleagues and Vibha Alangar.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Evan Cochrane.
+"""  # 1: DONE PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 #
-# TODO: 2.
+# 2. DONE
 #   READ this comment, ASKING QUESTIONS as needed to understand it.
 #
 # Part 1:  CONSTRUCTING objects, applying ** METHODS ** to them:
@@ -81,11 +81,15 @@ def main():
     turtle = rg.SimpleTurtle('square')
     draw_many_squares(turtle, 3, 75, 15)
 
-    turtle3()
+    turtle3('black', 5)
 
     ###########################################################################
     # When the TODOs ask you to test YOUR code, put YOUR tests below this:
     ###########################################################################
+
+    try_methods()
+    try_functions()
+    try_methods_and_functions()
 
     window.close_on_mouse_click()  # Your code must be ABOVE this statement
 
@@ -171,6 +175,14 @@ def turtle3(color, thickness):
 
 
 def try_methods():
+    squirtle_reincarnated = rg.SimpleTurtle('turtle')
+    squirtle_reincarnated.pen = rg.Pen('brown', 5)
+
+    squirtle_reincarnated.forward(150)
+    squirtle_reincarnated.left(90)
+    squirtle_reincarnated.forward(50)
+    squirtle_reincarnated.backward(100)
+
     """
     Constructs a SimpleTurtle and sets its   pen   to a new rg.Pen
     that is 'brown' with thickness 5.
@@ -181,13 +193,18 @@ def try_methods():
       -- backward  100 units
     """
     ###########################################################################
-    # TODO: 3. Implement and test this function, per its doc-string above.
+    # 3. DONE Implement and test this function, per its doc-string above.
     #     (To test it, put a statement in   main   that calls this function.)
     ###########################################################################
 
 
 def try_functions():
     # IMPORTANT: Read the NOTE below before you try to solve this TO-DO!
+
+    jump_and_move_turtle(200, 100, 300, 30)
+    jump_and_move_turtle(100, 200, 0, 0)
+    jump_and_move_turtle(-50, 50, 100, 100)
+
     """
     Causes several SimpleTurtles to do the following:
      -- One jumps to (200, 100), then moves (while drawing) to (300, 30)
@@ -195,7 +212,7 @@ def try_functions():
      -- One jumps to (-50, 50), then moves (while drawing) to (100, 100)
     """
     ###########################################################################
-    # TODO: 4. Implement and test this function, per its doc-string above.
+    # 4. DONE Implement and test this function, per its doc-string above.
     #    (To test it, put a statement in   main   that calls this function.)
     #
     #    NOTE: This function requires
@@ -208,6 +225,28 @@ def try_functions():
 
 def try_methods_and_functions():
     # IMPORTANT: Read the NOTE below before you try to solve this TO-DO!
+
+    squirtles_sloppy_seconds = rg.SimpleTurtle('turtle')
+    squirtles_sloppy_seconds.pen = rg.Pen('blue', 5)
+
+    squirtles_sloppy_seconds.backward(150)
+
+    squirtles_sloppy_seconds.speed = 1
+    draw_many_squares(squirtles_sloppy_seconds, 2, 100, 30)
+
+    squirtles_sloppy_seconds.speed = 5
+    squirtles_sloppy_seconds.pen = rg.Pen('red', 5)
+    draw_many_squares(squirtles_sloppy_seconds, 10, 50, 15)
+
+    squirtles_sloppy_seconds.speed = 100
+    squirtles_sloppy_seconds.pen = rg.Pen('red', 35)
+    draw_many_squares(squirtles_sloppy_seconds, 8, 300, 60)
+
+    squirtles_sloppy_seconds.pen = rg.Pen('black', 3)
+    squirtles_sloppy_seconds.backward(200)
+    squirtles_sloppy_seconds.draw_circle(30)
+    squirtles_sloppy_seconds.draw_square(50)
+
     """
     Constructs a SimpleTurtle and sets its   pen  to a new rg.Pen
     that is 'blue' with thickness 5.
@@ -240,7 +279,7 @@ def try_methods_and_functions():
       8. Draw a SQUARE whose sides are each of length 50.
     """
     ###########################################################################
-    # TODO: 5. Implement and test this function, per its doc-string above.
+    # 5: DONE Implement and test this function, per its doc-string above.
     #    (To test it, put a statement in   main   that calls this function.)
     #
     #   NOTE: This function should ** CALL ** the
