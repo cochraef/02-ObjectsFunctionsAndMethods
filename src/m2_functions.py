@@ -3,12 +3,12 @@ Practice DEFINING and CALLING
      FUNCTIONS
 
 Authors: David Mutchler, Dave Fisher, Vibha Alangar, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Evan Cochrane.
+"""  # 1. DONE
 
 ###############################################################################
 #
-# TODO: 2.
+# 2. DONE
 #   Allow this module to use the  rosegraphics.py  module by marking the
 #     src
 #   folder in this project as a "Sources Root", as follows:
@@ -22,6 +22,9 @@ import rosegraphics as rg
 
 
 def main():
+    print(hypotenuse_length(5, 12))
+    turtles('blue', 10)
+
     """
     TESTS the functions that you will write below.
     You write the tests per the _TODO_s below.
@@ -30,7 +33,7 @@ def main():
 
 ###############################################################################
 #
-# TODO: 3a.  Define a function immediately blow this _TODO_.
+# 3a: Done  Define a function immediately blow this _TODO_.
 #   It takes two arguments that denote, for a right triangle,
 #   the lengths of the two sides adjacent to its right angle,
 #   and it returns the length of the hypotenuse of that triangle.
@@ -38,15 +41,17 @@ def main():
 #
 #   You may name the function and its parameters whatever you wish.
 #
-# TODO: 3b.  In main, CALL your function and print the returned value,
+# 3b: Done  In main, CALL your function and print the returned value,
 #   to test whether you defined the function correctly.
 #
 ###############################################################################
 
+def hypotenuse_length(side1, side2):
+    return ((side1 ** 2) + (side2 ** 2)) ** (1/2)
 
 ###############################################################################
 #
-# TODO: 4a.  Define a function immediately below this _TODO_.
+# 4a: DONE  Define a function immediately below this _TODO_.
 #   It takes two arguments:
 #     -- a string that represents a color (e.g. 'red')
 #     -- a positive integer that represents the thickness of a Pen.
@@ -62,11 +67,25 @@ def main():
 #
 #   You may name the function and its parameters whatever you wish.
 #
-# TODO: 4b.  In main, CALL your function and print the returned value,
+# 4b: DONE  In main, CALL your function and print the returned value,
 #   to test whether you defined the function correctly.
 #
 ###############################################################################
 
+
+def turtles(color, thickness):
+    window = rg.TurtleWindow()
+
+    green = rg.SimpleTurtle('turtle')
+    custom = rg.SimpleTurtle('turtle')
+
+    green.pen = rg.Pen('green', thickness)
+    custom.pen = rg.Pen(color, 5)
+
+    green.forward(100)
+    custom.backward(100)
+
+    window.close_on_mouse_click()
 
 ###############################################################################
 #
